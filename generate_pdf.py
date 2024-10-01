@@ -106,7 +106,7 @@ with open(csv_file, mode='r') as file:
             # Depuración de la ruta de la imagen
             print(f"Buscando la imagen en: {image_path}")
 
-        
+
             # Solo agregar un nuevo subsubsubtema si es diferente al último visto
             if subsubsubtema != last_subsubsubtema:
                 content.append(Paragraph(subsubsubtema, subsubsub_style))
@@ -127,7 +127,7 @@ suggestion_style = ParagraphStyle(name='SuggestionText', fontName='Montserrat', 
 suggestion_paragraph = Paragraph(
     """
     <font name="Montserrat" size="12">
-    My suggestion is to first learn the algorithms from the Basic Algorithms section for the Front Right slot. It is important to choose only one of the first two algorithms and check if the third one is applicable from a different position; if it is, it would be a good idea to learn it as well. Once you have mastered this, move on to learning the cases from the other three angles. After that, I would start learning all the cases from the Useful Cases section. Next, learn some of the advanced cases for the Front Right slot, selecting only the most important, easiest, or most frequent cases from the Advanced section for the other angles, as not all are as common. Prioritize only a few cases in this section. Remember to practice Finger Tricks; I have included a video in the References section.
+    My suggestion is to learn the first algorithm for each case. If you don't like it, use the second one, and if you don’t like the second one, use the third. I recommend that you learn one per day following the order presented in this PDF. Learn it with the triggers, which are those small movements in parentheses, and practice it many times until you master it.
     </font>
     """, 
     suggestion_style
@@ -143,37 +143,12 @@ content.append(Paragraph("Referencias", subtitle_style))
 # Lista de referencias con solo el link cliqueable, en azul y subrayado
 referencias = [
     'VisualCube: Generate custom Rubik\'s cube visualisations from your browser address bar: <a href="https://cube.rider.biz/visualcube.php" color="blue"><u>https://cube.rider.biz/visualcube.php</u></a>',
-    'VisualCube: Cube image in each basic algorithm: <a href="https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=f2l&r=y30x-30z0&bg=t&case=U" color="blue"><u>https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=f2l&r=y30x-30z0&bg=t&case=U</u></a>',
-    'VisualCube: Cube image in each advanced algorithm: <a href="https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=f2l_2&r=y30x-30z0&bg=t&case=U" color="blue"><u>https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=f2l_2&r=y30x-30z0&bg=t&case=U</u></a>',
-    'SpeedCubeDB: F2L Algorithms: <a href="https://speedcubedb.com/a/3x3/F2L" color="blue"><u>https://speedcubedb.com/a/3x3/F2L</u></a>',
-    'SpeedCubeDB: F2L Advanced Algorithms: <a href="https://speedcubedb.com/a/3x3/AdvancedF2L" color="blue"><u>https://speedcubedb.com/a/3x3/AdvancedF2L</u></a>',
-    'CubeSkills: F2L Useful Cases: <a href="https://www.cubeskills.com/tutorials/useful-f2l-algorithms" color="blue"><u>https://www.cubeskills.com/tutorials/useful-f2l-algorithms</u></a>',
-    'Eddievak: Rubik\'s Cube: Pro Fingertricks: <a href="https://www.youtube.com/watch?v=5uqpcifk5ro" color="blue"><u>https://www.youtube.com/watch?v=5uqpcifk5ro</u></a>',
-    'EddieVak: Example solve, using Keyhole: <a href="https://www.youtube.com/shorts/d7co6HdEbf4" color="blue"><u>https://www.youtube.com/shorts/d7co6HdEbf4</u></a>',
-    'Eddievak: F2L Advanced Cases: <a href="https://www.youtube.com/shorts/VgaYZEh3LZE" color="blue"><u>https://www.youtube.com/shorts/VgaYZEh3LZE</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/pcWonR6TRsU" color="blue"><u>https://www.youtube.com/shorts/pcWonR6TRsU</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/B_qMmK77vuM" color="blue"><u>https://www.youtube.com/shorts/B_qMmK77vuM</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/NpC1Is_0gKQ" color="blue"><u>https://www.youtube.com/shorts/NpC1Is_0gKQ</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/vBEG0WnALz4" color="blue"><u>https://www.youtube.com/shorts/vBEG0WnALz4</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/gWuaVQY4oVw" color="blue"><u>https://www.youtube.com/shorts/gWuaVQY4oVw</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/5fb6GV9CDAA" color="blue"><u>https://www.youtube.com/shorts/5fb6GV9CDAA</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/YHASEHHPoOE" color="blue"><u>https://www.youtube.com/shorts/YHASEHHPoOE</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/aZPmz5SNE_E" color="blue"><u>https://www.youtube.com/shorts/aZPmz5SNE_E</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/VAHjYclnUfo" color="blue"><u>https://www.youtube.com/shorts/VAHjYclnUfo</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/tatbSlNBAuw" color="blue"><u>https://www.youtube.com/shorts/tatbSlNBAuw</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/pKBFk0Tuqrc" color="blue"><u>https://www.youtube.com/shorts/pKBFk0Tuqrc</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/W0Af7wzzyas" color="blue"><u>https://www.youtube.com/shorts/W0Af7wzzyas</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/3PvyLNVwEf4" color="blue"><u>https://www.youtube.com/shorts/3PvyLNVwEf4</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/_WOC0ZCxKEs" color="blue"><u>https://www.youtube.com/shorts/_WOC0ZCxKEs</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/X_PYfqJNFIc" color="blue"><u>https://www.youtube.com/shorts/X_PYfqJNFIc</u></a>',
-    'Eddievak: <a href="https://www.youtube.com/shorts/DF_o8ejApAw" color="blue"><u>https://www.youtube.com/shorts/DF_o8ejApAw</u></a>',
-    'CubeHead: TOP 6 F2L tricks you SHOULD KNOW  <a href="https://www.youtube.com/watch?v=_dxV4mrG3Cs&t=22s" color="blue"><u>https://www.youtube.com/watch?v=_dxV4mrG3Cs&t=22s</u></a>',
-    'CubeHead: 6 FUNDAMENTAL RULES for Rotating During F2L  <a href="https://www.youtube.com/watch?v=Hr_4_ACjo-8&t=335s" color="blue"><u>https://www.youtube.com/watch?v=Hr_4_ACjo-8&t=335s</u></a>',
-    'J Perm: Rubik´s Cube: F2L Keyhole Technique & Pseudoslotting (Beginner to Advanced)  <a href="https://www.youtube.com/watch?v=TWffMVBqj1w" color="blue"><u>https://www.youtube.com/watch?v=TWffMVBqj1w</u></a>',
-    'CubeSkills: Advanced F2L - Using Keyhole in F2L <a href="https://www.youtube.com/watch?v=mXEOPX42FJg" color="blue"><u>https://www.youtube.com/watch?v=mXEOPX42FJg</u></a>',
-    'Biel Salmons: 10 CASOS de F2L AVANZADO para EXPERTOS | F2L AVANZADO 4  <a href="https://www.youtube.com/watch?v=LXZCgHrcPqs&list=PLNmPrb0wMCClIVNMpHb4n0AXSIH392IQu&index=12" color="blue"><u>https://www.youtube.com/watch?v=LXZCgHrcPqs&list=PLNmPrb0wMCClIVNMpHb4n0AXSIH392IQu&index=12</u></a>',
-    'Biel Salmons: F2L AVANZADO para EXPERTOS <a href="https://www.youtube.com/watch?v=3upuZ6tl1nU&list=PLNmPrb0wMCClIVNMpHb4n0AXSIH392IQu&index=8" color="blue"><u>https://www.youtube.com/watch?v=3upuZ6tl1nU&list=PLNmPrb0wMCClIVNMpHb4n0AXSIH392IQu&index=8</u></a>',
-    'GitHub: Repository with which the images and this document were created: <a href="https://github.com/RedCyclone05/F2L" color="blue"><u>https://github.com/RedCyclone05/F2L</u></a>'
+    'VisualCube: Cube image in each algorithm: <a href="https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=oll&view=plan&bg=t&case=D" color="blue"><u>https://cube.rider.biz/visualcube.php?fmt=png&size=500&stage=oll&view=plan&bg=t&case=D</u></a>',
+    'SpeedCubeDB: OLL Algorithms: <a href="https://speedcubedb.com/a/3x3/OLL" color="blue"><u>https://speedcubedb.com/a/3x3/OLL</u></a>',
+    'CubeSkills: OLL Cases: <a href="https://www.cubeskills.com/tutorials/oll-algorithms" color="blue"><u>https://www.cubeskills.com/tutorials/oll-algorithms</u></a>',
+    'CubeHead: How to Learn Full OLL in ONE MONTH (easy)  <a href="https://www.youtube.com/watch?v=Ysy1S8ADzqw&t=230s" color="blue"><u>https://www.youtube.com/watch?v=Ysy1S8ADzqw&t=230s</u></a>',
+    'CubeHead: Full OLL: Algorithms & Finger Tricks [My Algs 2024]  <a href="https://www.youtube.com/watch?v=Q947zZRYMdg&t=10s" color="blue"><u>https://www.youtube.com/watch?v=Q947zZRYMdg&t=10s</u></a>',
+    'GitHub: Repository with which the images and this document were created: <a href="https://github.com/RedCyclone05/OLL" color="blue"><u>https://github.com/RedCyclone05/OLL</u></a>'
 ]
 
 # Agregar cada referencia como un bullet con enlace cliqueable

@@ -2,35 +2,21 @@ import csv
 import os
 import genanki
 
-# Mensaje de advertencia
-print("\nPor favor, antes de usar este código asegúrate de usar el código 'group_generator.py'. Luego revisa qué archivo CSV deseas.")
-
 # Solicitar nombre del deck y archivo CSV al usuario
 deck_name = input("\nIntroduce el nombre del deck: ")
 
-# Listar todos los archivos CSV en el directorio
-csv_folder = 'Divided_CSV'
-csv_files = [f for f in os.listdir(csv_folder) if f.endswith('.csv')]
-
-if csv_files:
-    print("\nArchivos CSV disponibles en la carpeta 'Divided_CSV':")
-    for csv_file in csv_files:
-        print(f"- {csv_file}")
-else:
-    print("\nNo se encontraron archivos CSV en el directorio.")
-csv_name = input("\nIntroduce el nombre del archivo CSV (sin extensión): ")
-input_csv = os.path.join(csv_folder, f'{csv_name}.csv')
+csv_name = 'DataBase.csv'
 output_apkg = f'{deck_name}.apkg'
-image_folder = 'processed_downloaded_images'
+image_folder = 'downloaded_images'
 
 # Reemplazar espacios en el nombre del deck con guiones bajos
 deck_name_sanitized = deck_name.replace(' ', '_')
 
 # Crear un modelo para las tarjetas con 6 campos
-model_id = 1607392319
+model_id = 1607392315
 model = genanki.Model(
   model_id,
-  'Simple Model',
+  'Simple ModelOLL',
   fields=[
     {'name': 'Front'},      # Campo 1
     {'name': 'Back'},       # Campo 2 (imagen)
@@ -71,13 +57,13 @@ model = genanki.Model(
   ])
 
 # Crear un deck
-deck_id = 2059400110
+deck_id = 2059400211
 deck = genanki.Deck(
   deck_id,
   deck_name_sanitized)
 
 # Leer el archivo CSV y generar las tarjetas
-with open(input_csv, newline='', encoding='utf-8') as csvfile:
+with open(csv_name, newline='', encoding='utf-8') as csvfile:
     reader = csv.reader(csvfile)
     
     # Saltarse el primer renglón (encabezados)
@@ -86,11 +72,11 @@ with open(input_csv, newline='', encoding='utf-8') as csvfile:
     rows = list(reader)
     
     for row in rows:
-        # Columna 10 (anverso)
-        front = row[9]
+        # Columna 7 (anverso)
+        front = row[6]
         
-        # Columna 4 es el nombre de la imagen en processed_downloaded_images
-        image_name = row[3]
+        # Columna 2 es el nombre de la imagen en processed_downloaded_images
+        image_name = row[1]
         image_path = os.path.join(image_folder, image_name)
         
         # Verificar si la imagen existe
@@ -99,11 +85,11 @@ with open(input_csv, newline='', encoding='utf-8') as csvfile:
         else:
             image_tag = '[Imagen no encontrada]'
         
-        # Columnas 6, 7, 8 y 9 (contenido adicional en el reverso)
-        field1 = row[5]  # Columna 6
-        field2 = row[6]  # Columna 7
-        field3 = row[7]  # Columna 8
-        field4 = row[8]  # Columna 9
+        # Columnas 4, 5, 6  (contenido adicional en el reverso)
+        field1 = row[3]  # Columna 4
+        field2 = row[4]  # Columna 5
+        field3 = row[5]  # Columna 6
+        field4 = row[6]  # Vacio
         
         # Crear una nueva nota (tarjeta) con los 6 campos
         note = genanki.Note(
@@ -118,11 +104,9 @@ with open(input_csv, newline='', encoding='utf-8') as csvfile:
 package = genanki.Package(deck)
 
 # Añadir las imágenes al paquete
-package.media_files = [os.path.join(image_folder, row[3]) for row in rows if os.path.exists(os.path.join(image_folder, row[3]))]
+package.media_files = [os.path.join(image_folder, row[1]) for row in rows if os.path.exists(os.path.join(image_folder, row[1]))]
 
 # Guardar el archivo .apkg
 package.write_to_file(output_apkg)
 
 print(f"Baraja de Anki generada correctamente: {output_apkg}")
-
-
