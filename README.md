@@ -12,7 +12,7 @@ Este proyecto está diseñado para procesar imágenes relacionadas con el paso O
 
 ## Estructura del Proyecto
 
-El proyecto consta de tres scripts principales:
+El proyecto consta de cinco scripts principales:
 
 1. **Descargar Imágenes** (`download_images.py`): Este script descarga imágenes desde enlaces especificados en un archivo CSV y las guarda en una carpeta local.
 
@@ -22,7 +22,7 @@ El proyecto consta de tres scripts principales:
 
 4. **Generar PDF** (`generate_pdf.py`): Lee un archivo CSV con información sobre las imágenes y genera un documento PDF que incluye las imágenes procesadas y detalles adicionales.
 
-7. **Generar Deck de Anki** (`anki_generator.py`): Pregunta al usuario que archivo CSV quiere que lea para generar el Deck de Anki, genera un Deck de Anki con los casos elegidos. En la parte frontal plantea el algoritmo para colocar el caso deseado, en la parte de atras se muestra la imagen del caso y debajo de ella se muestran los algoritmos para resolver dicho caso. 
+5. **Generar Deck de Anki** (`anki_generator.py`): Pregunta al usuario que archivo CSV quiere que lea para generar el Deck de Anki, genera un Deck de Anki con los casos elegidos. En la parte frontal plantea el algoritmo para colocar el caso deseado, en la parte de atras se muestra la imagen del caso y debajo de ella se muestran los algoritmos para resolver dicho caso. 
 
 ## Requisitos
 
